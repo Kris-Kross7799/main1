@@ -16,21 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from task2.views import index
+from task3.views import index, index2
 from django.views.generic import TemplateView
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', index),
+#     # path('index2/',index2.as_view()
+#     path('class/',TemplateView.as_view(template_name='second_task/Это шаблон для классового представления.html'))] #сгенерировали класс
+                                                                                                                    # и получили доступ к его
+                                                                                                                    # методу на ходу,                                                                                                            # без создания класса во view
+#index2.as_view() - станд.метод класса, который запустит ф-цию,
+# аналогичную index(return render(request...)
+#можно использовать запись:TemplateView.as_view(template_name=...)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    # path('index2/',index2.as_view()
-    path('class/',TemplateView.as_view(template_name='second_task/Это шаблон для классового представления.html'))] #сгенерировали класс
-                                                                                                                    # и получили доступ к его
-                                                                                                                    # методу на ходу,
-                                                                                                                    # без создания класса во view
-
-
-
-
-#index2.as_view() - станд.метод класса, который запустит ф-цию,
-# аналогичную index(return render(requesr...)
-#можно использовать запись:TemplateView.as_view(template_name=...)
+    path('2/',index2.as_view()),
+    path('3/',TemplateView.as_view(template_name='third_task/3.html'))
+]
