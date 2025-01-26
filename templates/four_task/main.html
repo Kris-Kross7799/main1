@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><h1>My site</h1></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    {%block pagename%}
+        <h1>{{main}}</h1>
+    {%include 'four_task/line.html'%}
+    {%endblock%}
+</head>
+
+<body>
+<menu>
+{%block menu%}
+<h3>меню сайта</h3>
+<ul>
+    <li><a href="http://127.0.0.1:8000">главная</a></li>
+    <p></p>
+    <li><a href="http://127.0.0.1:8000/shop">в магазин</a></li>
+    <p></p>
+    <li><a href="http://127.0.0.1:8000/basket">корзина</a></li>
+    <p></p>
+</ul>
+{%endblock%}
+</menu>
+
+<cont>
+{%block content%}
+{%include 'four_task/line.html'%}
+    <h2>{{text}}</h2>
+    <p></p>
+    <h2>{{text}}</h2>
+    <p></p>
+    <h2>{{text}}</h2>
+    <p></p>
+    <h2>{{text}}</h2>
+    <p></p>
+{%endblock%}
+</cont>
+
+
+<footer>
+    {%block footer%}
+    {%include 'four_task/line.html'%}
+    <h5>сайт
+        <p></p>
+        2025</h5>
+    {%endblock%}
+</footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'four_task/main.html' %}
+{%block pagename%}
+    <h1>ИГРЫ</h1>
+<p></p>
+{%include 'four_task/line.html'%}
+{%endblock%}
+
+<body>
+{%block content%}
+
+{%include 'four_task/line.html'%}
+<h3>магазин</h3>
+
+{%for i in games%}
+<ul>
+    <p><li><h3>{{i}}  <button type="button" style="font:bold 14 px Arial; ">КУПИТЬ</button></h3></li></p>
+</ul>
+{% endfor %}
+<p></p>
+<h3>описание</h3>
+<ul>
+    <li><a href="https://ru.wikipedia.org/wiki/Atomic_Heart">Atomic Heart</a></li>
+    <p></p>
+    <li><a href="https://ru.wikipedia.org/wiki/Cyberpunk_2077">Cyberpunk 2077</a></li>
+      <p></p>
+    <li><a href="https://ru.wikipedia.org/wiki/Payday_2">PayDay 2</a></li>
+      <p></p>
+{%endblock%}
+
+</body>
+</html>

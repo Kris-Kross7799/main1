@@ -1,0 +1,17 @@
+{% extends 'four_task/main.html' %}
+
+{%block pagename%}
+    <h1>КОРЗИНА</h1>
+{%include 'four_task/line.html'%}
+{%endblock%}
+
+<cont>
+    {%block content%}
+    {%include 'four_task/line.html'%}
+    <h3>Ваша корзина пуста!</h3>
+    <p></p>
+    <h3>И нам очень жаль...</h3>
+    {%endblock%}
+</cont>
+
+
