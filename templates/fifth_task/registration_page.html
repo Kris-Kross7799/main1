@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Имитация регистрации</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+<header>
+    <form method="post">
+    {% csrf_token %}
+    <h1>Регистрация пользователя</h1>
+    {%if 'error' is not None%}
+        <h3>{{error}}</h3>
+    {%else%}
+        <h3>{{welcome_message}}</h3>
+    {%endif%}
+</header>
+
+
+
+<p></p>
+    <label for="username">Введите логин</label>
+    <input type="text" id='username' name="username" maxlength='30' required>
+
+    <label for="password">Введите пароль</label>
+    <input type="password" id='password' name="password" minlength='8' required>
+
+    <label for="repeat_password">Повторите пароль</label>
+    <input type="password" id='repeat_password' name="repeat_password" minlength='8' required>
+
+    <label for="age">Введите свой возраст</label>
+    <input type="number" id="age" name="age" maxlength="3" required>
+
+    <button type="submit">Отправить</button>
+</form>
+</body>
+</html>
